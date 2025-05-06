@@ -14,7 +14,7 @@ deployment "development" {
   }
 }
 
-deployment "test" {
+deployment "staging" {
   inputs = {
     regions        = ["us-east-1", "us-west-1"]
     role_arn       = "arn:aws:iam::891612578560:role/stacks-sidd_tutorial-Learn-Terraform-Stacks-deployments"
