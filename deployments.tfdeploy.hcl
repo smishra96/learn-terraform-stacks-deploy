@@ -1,33 +1,38 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-identity_token "aws" {
-  audience = ["aws.workload.identity"]
+# Source environment secrets from your HCP Terraform variable set
+store "varset" "tokens" {
+  id       = "varset-RYjcHNRHFgCA5gQH"
+  category = "env"
 }
 
 deployment "development" {
   inputs = {
-    regions        = ["us-east-1"]
-    role_arn       = "arn:aws:iam::891612578560:role/stacks-sidd_tutorial-Learn-Terraform-Stacks-deployments"
-    identity_token = identity_token.aws.jwt
-    default_tags   = { stacks-preview-example = "lambda-component-expansion-stack" }
+    regions       = ["us-east-1"]
+    access_key    = store.varset.tokens.AWS_ACCESS_KEY_ID
+    secret_key    = store.varset.tokens.AWS_SECRET_ACCESS_KEY
+    session_token = store.varset.tokens.AWS_SESSION_TOKEN
+    default_tags  = { stacks-preview-example = "lambda-component-expansion-stack" }
   }
 }
 
 deployment "staging" {
   inputs = {
-    regions        = ["us-east-1", "us-west-1"]
-    role_arn       = "arn:aws:iam::891612578560:role/stacks-sidd_tutorial-Learn-Terraform-Stacks-deployments"
-    identity_token = identity_token.aws.jwt
-    default_tags   = { stacks-preview-example = "lambda-component-expansion-stack" }
+    regions       = ["us-east-1", "us-west-1"]
+    access_key    = store.varset.tokens.AWS_ACCESS_KEY_ID
+    secret_key    = store.varset.tokens.AWS_SECRET_ACCESS_KEY
+    session_token = store.varset.tokens.AWS_SESSION_TOKEN
+    default_tags  = { stacks-preview-example = "lambda-component-expansion-stack" }
   }
 }
 
 deployment "production" {
   inputs = {
-    regions        = ["us-east-1", "us-west-1"]
-    role_arn       = "arn:aws:iam::891612578560:role/stacks-sidd_tutorial-Learn-Terraform-Stacks-deployments"
-    identity_token = identity_token.aws.jwt
-    default_tags   = { stacks-preview-example = "lambda-component-expansion-stack" }
+    regions       = ["us-east-1", "us-west-1"]
+    access_key    = store.varset.tokens.AWS_ACCESS_KEY_ID
+    secret_key    = store.varset.tokens.AWS_SECRET_ACCESS_KEY
+    session_token = store.varset.tokens.AWS_SESSION_TOKEN
+    default_tags  = { stacks-preview-example = "lambda-component-expansion-stack" }
   }
 }

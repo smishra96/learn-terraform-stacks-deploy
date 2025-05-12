@@ -1,6 +1,26 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+variable "access_key" {
+  description = "AWS access key"
+  type        = string
+  ephemeral   = true
+}
+
+variable "secret_key" {
+  description = "AWS sensitive secret key."
+  type        = string
+  sensitive   = true
+  ephemeral   = true
+}
+
+variable "session_token" {
+  description = "AWS session token."
+  type        = string
+  sensitive   = true
+  ephemeral   = true
+}
+
 required_providers {
   aws = {
     source  = "hashicorp/aws"
@@ -18,7 +38,7 @@ required_providers {
   }
 
   local = {
-    source = "hashicorp/local"
+    source  = "hashicorp/local"
     version = "~> 2.4.0"
   }
 }
@@ -29,10 +49,9 @@ provider "aws" "configurations" {
   config {
     region = each.value
 
-    assume_role_with_web_identity {
-      role_arn           = var.role_arn
-      web_identity_token = var.identity_token
-    }
+    access_key = var.access_key
+    secret_key = var.secret_key
+    token      = var.session_token
 
     default_tags {
       tags = var.default_tags
