@@ -7,7 +7,7 @@ store "varset" "tokens" {
   category = "env"
 }
 
-deployment "development" {
+deployment "dev" {
   inputs = {
     regions       = ["us-east-1"]
     access_key    = store.varset.tokens.AWS_ACCESS_KEY_ID
@@ -27,7 +27,7 @@ deployment "development" {
 #   }
 # }
 
-deployment "production" {
+deployment "prod" {
   inputs = {
     regions       = ["us-east-1", "us-west-1"]
     access_key    = store.varset.tokens.AWS_ACCESS_KEY_ID
