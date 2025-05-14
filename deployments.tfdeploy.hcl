@@ -9,7 +9,7 @@ store "varset" "terra_tokens" {
 
 store "varset" "tokens" {
   id       = "varset-RYjcHNRHFgCA5gQH"
-  category = "terraform"
+  category = "env"
 }
 
 deployment "dev" {
