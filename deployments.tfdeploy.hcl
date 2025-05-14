@@ -22,7 +22,7 @@ deployment "dev" {
   }
 }
 
-# deployment "staging" {
+# deployment "stag" {
 #   inputs = {
 #     regions       = ["us-east-1", "us-west-1"]
 #     access_key    = store.varset.tokens.AWS_ACCESS_KEY_ID
