@@ -2,9 +2,14 @@
 # SPDX-License-Identifier: MPL-2.0
 
 # Source environment secrets from your HCP Terraform variable set
+store "varset" "terra_tokens" {
+  id       = "varset-RYjcHNRHFgCA5gQH"
+  category = "terraform"
+}
+
 store "varset" "tokens" {
   id       = "varset-RYjcHNRHFgCA5gQH"
-  category = "env"
+  category = "terraform"
 }
 
 deployment "dev" {
@@ -13,7 +18,7 @@ deployment "dev" {
     access_key    = store.varset.tokens.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.tokens.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.tokens.AWS_SESSION_TOKEN
-    default_tags  = { stacks-varset-tag = store.varset.tokens.default_tags }
+    default_tags  = { stacks-varset-tag = store.varset.terra_tokens.default_tags }
   }
 }
 
