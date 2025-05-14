@@ -3,7 +3,7 @@
 
 # Source environment secrets from your HCP Terraform variable set
 store "varset" "terra_tokens" {
-  id       = "varset-RYjcHNRHFgCA5gQH"
+  id       = "varset-B4tF7wet7KYcNafR"
   category = "terraform"
 }
 
