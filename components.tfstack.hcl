@@ -50,3 +50,10 @@ component "api_gateway" {
     random = provider.random.this
   }
 }
+
+component "terraform_data" {
+  source = "./terraform_data"
+  inputs = {
+    data = var.tf_data
+  }
+}
