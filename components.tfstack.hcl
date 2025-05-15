@@ -8,6 +8,7 @@ component "s3" {
 
   inputs = {
     region = each.value
+    tags   = var.default_tags
   }
 
   providers = {
