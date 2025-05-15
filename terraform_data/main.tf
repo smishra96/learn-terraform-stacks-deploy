@@ -1,3 +1,3 @@
-resource "terraform_data" "data" {
+ephemeral "terraform_data" "data" {
   input = var.data
 }
