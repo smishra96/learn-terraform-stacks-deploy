@@ -56,4 +56,7 @@ component "terraform_data" {
   inputs = {
     data = var.tf_data
   }
+  providers = {
+    terraform = provider.terraform.this
+  }
 }
