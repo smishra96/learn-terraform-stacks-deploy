@@ -19,6 +19,7 @@ deployment "dev" {
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
     default_tags  = store.varset.terra_tokens.DEV_TAGS
+    tf_data       = store.varset.terra_tokens.DEV_TAGS
   }
 }
 
@@ -39,5 +40,6 @@ deployment "prod" {
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
     default_tags  = store.varset.terra_tokens.PROD_TAGS
+    tf_data       = store.varset.terra_tokens.PROD_TAGS
   }
 }

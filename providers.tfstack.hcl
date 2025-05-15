@@ -43,6 +43,7 @@ provider "aws" "configurations" {
   }
 }
 
+provider "terraform" "this" {}
 provider "random" "this" {}
 provider "archive" "this" {}
 provider "local" "this" {}
