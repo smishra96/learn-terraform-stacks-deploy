@@ -31,9 +31,3 @@ variable "session_token" {
   sensitive   = true
   ephemeral   = true
 }
-
-variable "tf_data" {
-  description = "Terraform data to be passed to the terraform_data component"
-  type        = map(string)
-  ephemeral   = true
-}

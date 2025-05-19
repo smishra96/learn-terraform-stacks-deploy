@@ -51,12 +51,3 @@ component "api_gateway" {
   }
 }
 
-component "terraform_data" {
-  source = "./terraform_data"
-  inputs = {
-    data = var.tf_data
-  }
-  providers = {
-    terraform = provider.terraform.this
-  }
-}
