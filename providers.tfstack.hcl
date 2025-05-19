@@ -21,10 +21,6 @@ required_providers {
     source  = "hashicorp/local"
     version = "~> 2.4.0"
   }
-
-  terraform = {
-    source = "terraform.io/builtin/terraform"
-  }
 }
 
 provider "aws" "configurations" {
@@ -43,7 +39,6 @@ provider "aws" "configurations" {
   }
 }
 
-provider "terraform" "this" {}
 provider "random" "this" {}
 provider "archive" "this" {}
 provider "local" "this" {}
