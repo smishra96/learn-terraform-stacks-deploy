@@ -4,17 +4,17 @@
 required_providers {
   aws = {
     source  = "hashicorp/aws"
-    version = "~> 5.7.0"
+    version = "~> 5.23.0"
   }
 
   random = {
     source  = "hashicorp/random"
-    version = "~> 3.5.1"
+    version = "~> 3.1.3"
   }
 
   archive = {
     source  = "hashicorp/archive"
-    version = "~> 2.4.0"
+    version = "~> 2.2.0"
   }
 
   local = {
