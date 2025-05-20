@@ -13,7 +13,7 @@ store "varset" "terra_tokens" {
 # }
 
 store "varset" "aws" {
-  name     = "varset-RYjcHNRHFgCA5gQH"
+  name     = "aws"
   category = "env"
 }
 
