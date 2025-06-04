@@ -13,9 +13,14 @@ store "varset" "terra_tokens" {
 # }
 
 store "varset" "aws" {
-  name     = "AWS Credentials"
+  id       = "varset-RYjcHNRHFgCA5gQH"
   category = "env"
 }
+
+# store "varset" "aws" {
+#   name     = "AWS"
+#   category = "env"
+# }
 
 deployment "dev" {
   inputs = {
