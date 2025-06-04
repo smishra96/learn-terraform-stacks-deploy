@@ -7,6 +7,11 @@ store "varset" "terra_tokens" {
   category = "terraform"
 }
 
+store "varset" "regions" {
+  id       = "varset-SvCuECPVrAw5uPuk"
+  category = "terraform"
+}
+
 # store "eph_varset" "terra_tokens" {
 #   id       = "varset-2Y7zVXha1L5NmaZt"
 #   category = "terraform"
@@ -24,11 +29,11 @@ store "varset" "aws" {
 
 deployment "dev" {
   inputs = {
-    regions       = ["us-east-1"]
+    regions       = store.varset.regions.REGIONS.dev
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
-    default_tags  = nonephemeral(store.varset.terra_tokens.DEV_TAGS)
+    default_tags  = store.varset.terra_tokens.DEV_TAGS
   }
 }
 
@@ -44,7 +49,7 @@ deployment "dev" {
 
 deployment "prod" {
   inputs = {
-    regions       = ["us-east-1", "us-west-1"]
+    regions       = store.varset.regions.REGIONS.prod
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
