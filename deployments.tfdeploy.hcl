@@ -13,6 +13,7 @@ store "varset" "terra_tokens" {
 # }
 
 store "varset" "aws" {
+  name     = "AWS Credentials"
   category = "env"
 }
 
