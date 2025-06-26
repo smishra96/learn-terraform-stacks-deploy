@@ -27,9 +27,10 @@ store "varset" "aws" {
 #   category = "env"
 # }
 
+
 deployment "dev" {
   inputs = {
-    regions       = nonephemeral(store.varset.regions.dev)
+    regions       = ["us-east-1"]
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
@@ -49,7 +50,7 @@ deployment "dev" {
 
 deployment "prod" {
   inputs = {
-    regions       = nonephemeral(store.varset.regions.prod)
+    regions       = ["us-east-1", "us-west-1"]
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
