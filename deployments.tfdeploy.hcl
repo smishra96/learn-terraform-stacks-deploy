@@ -13,7 +13,7 @@ store "varset" "regions" {
 }
 
 store "varset" "aws" {
-  id       = "varset-KQj8KLGSNadq9q9n"
+  id       = "varset-hQ7UpZFKFfVbLWQr"
   category = "env"
 }
 
