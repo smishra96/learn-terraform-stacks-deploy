@@ -8,12 +8,12 @@
 # }
 
 store "varset" "regions" {
-  id       = "varset-82pHajf3kqKoGhAL"
+  id       = "varset-qkgWYedVNtAtQkCL"
   category = "terraform"
 }
 
 store "varset" "aws" {
-  id       = "varset-hQ7UpZFKFfVbLWQr"
+  id       = "varset-XntEbAoZUwVKMLkA"
   category = "env"
 }
 
