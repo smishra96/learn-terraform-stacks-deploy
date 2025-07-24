@@ -8,12 +8,12 @@
 # }
 
 store "varset" "regions" {
-  name     = "regions"
+  id       = "varset-qkgWYedVNtAtQkCL"
   category = "terraform"
 }
 
 store "varset" "aws" {
-  name     = "AWS"
+  id       = "varset-XntEbAoZUwVKMLkA"
   category = "env"
 }
 
