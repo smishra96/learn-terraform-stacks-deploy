@@ -8,7 +8,7 @@
 # }
 
 store "varset" "regions" {
-  name     = "REGIONS"
+  name     = "regions"
   category = "terraform"
 }
 
