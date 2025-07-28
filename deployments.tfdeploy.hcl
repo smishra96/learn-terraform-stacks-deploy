@@ -12,15 +12,15 @@ store "varset" "regions" {
   category = "terraform"
 }
 
-store "varset" "aws" {
-  id       = "varset-XntEbAoZUwVKMLkA"
-  category = "env"
-}
-
 # store "varset" "aws" {
-#   name     = "AWS"
+#   id       = "varset-XntEbAoZUwVKMLkA"
 #   category = "env"
 # }
+
+store "varset" "aws" {
+  name     = "AWS"
+  category = "env"
+}
 
 
 deployment "dev" {
