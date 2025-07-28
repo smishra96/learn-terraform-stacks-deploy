@@ -7,8 +7,8 @@
 #   category = "terraform"
 # }
 
-store "varset" "regions" {
-  id       = "varset-qkgWYedVNtAtQkCL"
+store "varset" "blahblah" {
+  name     = "regions"
   category = "terraform"
 }
 
@@ -25,7 +25,7 @@ store "varset" "aws" {
 
 deployment "dev" {
   inputs = {
-    regions       = store.varset.regions.stable.dev
+    regions       = store.varset.blahblah.stable.dev
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
@@ -45,7 +45,7 @@ deployment "dev" {
 
 deployment "prod" {
   inputs = {
-    regions       = store.varset.regions.stable.prod
+    regions       = store.varset.blahblah.stable.prod
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
