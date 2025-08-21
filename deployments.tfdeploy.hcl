@@ -11,6 +11,8 @@ store "varset" "aws" {
 #   category = "terraform"
 # }
 
+// Note: a variable cannot be used as both stable and non-stable in the same deployment for different inputs.
+
 deployment "dev" {
   inputs = {
     regions = ["us-east-1"]
