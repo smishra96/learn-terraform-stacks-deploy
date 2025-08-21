@@ -2,12 +2,12 @@
 # SPDX-License-Identifier: MPL-2.0
 
 store "varset" "aws" {
-  id       = "AWS2"
+  name     = "AWS2"
   category = "env"
 }
 
 store "varset" "regions" {
-  id       = "REGIONS"
+  name     = "REGIONS"
   category = "env"
 }
 
