@@ -2,14 +2,18 @@
 # SPDX-License-Identifier: MPL-2.0
 
 store "varset" "aws" {
-  id       = "varset-4uvK9FndQTSNQNBk"
+  id       = "AWS2"
   category = "env"
 }
 
+store "varset" "regions" {
+  id       = "REGIONS"
+  category = "env"
+}
 
 deployment "dev" {
   inputs = {
-    regions       = ["us-east-1"]
+    regions       = store.varset.regions.dev
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
@@ -19,7 +23,7 @@ deployment "dev" {
 
 deployment "prod" {
   inputs = {
-    regions       = ["us-east-1", "us-west-1"]
+    regions       = store.varset.regions.prod
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
