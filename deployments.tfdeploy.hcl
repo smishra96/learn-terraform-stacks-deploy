@@ -1,11 +1,13 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+// Varset for AWS credentials
 store "varset" "aws" {
   name     = "AWS2"
   category = "env"
 }
 
+// Varset for regions
 # store "varset" "regions" {
 #   name     = "REGIONS"
 #   category = "terraform"
