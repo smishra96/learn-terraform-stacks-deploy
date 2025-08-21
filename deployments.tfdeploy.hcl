@@ -14,6 +14,9 @@ store "varset" "aws" {
 # }
 
 // Note: a variable cannot be used as both stable and non-stable in the same deployment for different inputs.
+// Note: the variables marked as stable/non-ephemeral consistent between plan & apply phases. 
+// To do this, we snapshot or save the variable value before the plan phase and use the saved value in 
+// both plan & apply phase.
 
 deployment "dev" {
   inputs = {
