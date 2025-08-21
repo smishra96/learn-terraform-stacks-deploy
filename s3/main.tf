@@ -7,7 +7,7 @@ resource "random_pet" "lambda_bucket_name" {
 }
 
 resource "aws_s3_bucket" "lambda_bucket" {
-  bucket = random_pet.lambda_bucket_name.id
+  bucket = "${var.bucket_prefix}-lambda-bucket-${random_pet.lambda_bucket_name.id}"
 }
 
 resource "aws_s3_bucket_ownership_controls" "bucket_controls" {
