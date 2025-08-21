@@ -8,7 +8,7 @@ store "varset" "aws" {
 
 store "varset" "regions" {
   name     = "REGIONS"
-  category = "env"
+  category = "terraform"
 }
 
 deployment "dev" {
