@@ -13,6 +13,7 @@ store "varset" "regions" {
 
 deployment "dev" {
   inputs = {
+    regions       = ["us-east-1"]
     regions       = store.varset.regions.dev
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
@@ -23,6 +24,7 @@ deployment "dev" {
 
 deployment "prod" {
   inputs = {
+    regions       = ["us-east-1", "us-west-2"]
     regions       = store.varset.regions.prod
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
