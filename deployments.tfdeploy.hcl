@@ -8,10 +8,16 @@ store "varset" "aws" {
 }
 
 // Varset for regions
-# store "varset" "regions" {
-#   name     = "REGIONS"
-#   category = "terraform"
-# }
+store "varset" "regions" {
+  name     = "REGIONS"
+  category = "terraform"
+}
+
+// Varset for prefix
+store "varset" "prefix" {
+  name     = "PREFIX"
+  category = "env"
+}
 
 // Note: a variable cannot be used as both stable and non-stable in the same deployment for different inputs.
 // Note: The variables marked as stable/non-ephemeral consistent between plan & apply phases. 
@@ -20,8 +26,9 @@ store "varset" "aws" {
 
 deployment "dev" {
   inputs = {
-    regions = ["us-east-1"]
-    # regions       = store.varset.regions.stable.dev
+    # regions       = ["us-east-1"]
+    bucket_prefix = store.varset.prefix.dev
+    regions       = store.varset.regions.stable.dev
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
@@ -31,8 +38,9 @@ deployment "dev" {
 
 deployment "prod" {
   inputs = {
-    regions = ["us-east-1", "us-west-1"]
-    # regions       = store.varset.regions.stable.prod
+    # regions       = ["us-east-1", "us-west-1"]
+    bucket_prefix = store.varset.prefix.prod
+    regions       = store.varset.regions.stable.prod
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
