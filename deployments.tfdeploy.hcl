@@ -6,10 +6,10 @@ store "varset" "aws" {
   category = "env"
 }
 
-store "varset" "regions" {
-  name     = "REGIONS"
-  category = "terraform"
-}
+# store "varset" "regions" {
+#   name     = "REGIONS"
+#   category = "terraform"
+# }
 
 deployment "dev" {
   inputs = {
