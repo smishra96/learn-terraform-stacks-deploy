@@ -24,7 +24,7 @@ store "varset" "regions" {
 deployment "dev" {
   inputs = {
     # regions = ["us-east-1"]
-    regions       = store.varset.regions.dev
+    regions       = store.varset.regions.stable.dev
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
@@ -35,7 +35,7 @@ deployment "dev" {
 deployment "prod" {
   inputs = {
     # regions = ["us-east-1", "us-west-1"]
-    regions       = store.varset.regions.prod
+    regions       = store.varset.regions.stable.prod
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
