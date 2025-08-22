@@ -17,6 +17,10 @@ data "local_file" "lambda_hello_world" {
   filename = data.archive_file.lambda_hello_world.output_path
 }
 
+variable "bucket_id" {
+  type = string
+}
+
 resource "aws_s3_object" "lambda_hello_world" {
   bucket = var.bucket_id
 
