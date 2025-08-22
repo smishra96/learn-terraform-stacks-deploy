@@ -7,8 +7,7 @@ component "s3" {
   source = "./s3"
 
   inputs = {
-    region        = each.value
-    bucket_prefix = var.bucket_prefix
+    region = each.value
   }
 
   providers = {

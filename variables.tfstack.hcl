@@ -5,10 +5,6 @@ variable "regions" {
   type = set(string)
 }
 
-variable "bucket_prefix" {
-  type = string
-}
-
 variable "default_tags" {
   description = "A map of default tags to apply to all AWS resources"
   type        = map(string)
