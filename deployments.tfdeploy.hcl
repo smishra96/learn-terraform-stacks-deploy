@@ -13,7 +13,7 @@ store "varset" "regions" {
   category = "terraform"
 }
 
-// Note: The variables marked as stable/non-ephemeral consistent between plan & apply phases. 
+// Note: The values for variable's marked as stable/non-ephemeral stays consistent between plan & apply phases. 
 //       To do this, we snapshot or save the variable value before the plan phase and use the saved value in 
 //       both plan & apply phase.
 
@@ -23,8 +23,8 @@ store "varset" "regions" {
 
 deployment "dev" {
   inputs = {
-    # regions = ["us-east-1"]
-    regions       = store.varset.regions.stable.dev
+    regions = ["us-east-1"]
+    # regions       = store.varset.regions.dev
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
@@ -34,8 +34,8 @@ deployment "dev" {
 
 deployment "prod" {
   inputs = {
-    # regions = ["us-east-1", "us-west-1"]
-    regions       = store.varset.regions.stable.prod
+    regions = ["us-east-1", "us-west-1"]
+    # regions       = store.varset.regions.prod
     access_key    = store.varset.aws.AWS_ACCESS_KEY_ID
     secret_key    = store.varset.aws.AWS_SECRET_ACCESS_KEY
     session_token = store.varset.aws.AWS_SESSION_TOKEN
