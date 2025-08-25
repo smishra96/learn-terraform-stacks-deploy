@@ -3,7 +3,7 @@
 
 // Varset for AWS credentials
 store "varset" "aws" {
-  name     = "AWS2"
+  name     = "AWS"
   category = "env"
 }
 
