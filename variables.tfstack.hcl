@@ -2,8 +2,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 variable "regions" {
-  type      = set(string)
-  ephemeral = true
+  type = set(string)
 }
 
 variable "default_tags" {
